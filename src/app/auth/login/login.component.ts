@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  errorMessage: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -38,8 +39,13 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error('Error al iniciar sesión', err);
-        alert('Credenciales incorrectas');
+        this.errorMessage = 'Credenciales incorrectas';
       }
     });
+  }
+
+  // Método para navegar a la página de registro
+  navigateToRegister() {
+    this.router.navigate(['/register']);
   }
 }
