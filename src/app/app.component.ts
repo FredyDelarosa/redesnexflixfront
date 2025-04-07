@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { VideoPlayerComponent } from "./components/video-player/video-player.component";
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     RouterOutlet,
     RouterLink,
     RouterLinkActive, 
-    VideoPlayerComponent],
+    VideoPlayerComponent,
+    LoginComponent,
+    RegisterComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

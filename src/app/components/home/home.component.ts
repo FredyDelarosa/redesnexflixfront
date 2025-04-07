@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 interface Movie {
   id: number;
@@ -16,7 +18,8 @@ interface Movie {
 
 @Component({
   selector: 'app-home',
-  
+  imports: [CommonModule],
+  standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 
@@ -112,7 +115,7 @@ export class HomeComponent implements OnInit {
     // Añadir más películas aquí...
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     // Puedes cargar datos desde un servicio aquí
@@ -127,5 +130,10 @@ export class HomeComponent implements OnInit {
     
     // Método 3: Usando estado de navegación (más datos)
     // this.router.navigateByUrl('/watch', { state: { movie } });
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

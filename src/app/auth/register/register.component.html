@@ -1,0 +1,19 @@
+<div class="register-container">
+    <h2>Crear cuenta</h2>
+    <form (ngSubmit)="register()">
+      <label>
+        Usuario:
+        <input type="text" [(ngModel)]="username" name="username" required />
+      </label>
+  
+      <label>
+        Contraseña:
+        <input type="password" [(ngModel)]="password" name="password" required />
+      </label>
+  
+      <button type="submit">Registrarse</button>
+    </form>
+  
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
+  
