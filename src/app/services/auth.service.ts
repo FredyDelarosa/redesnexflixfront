@@ -10,7 +10,7 @@ interface AuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_URL = 'http://localhost:8000/auth';
+  private readonly API_URL = 'http://23.22.223.193:8000/auth';
 
   constructor(private http: HttpClient) {}
 
