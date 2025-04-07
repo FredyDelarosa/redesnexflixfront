@@ -1,19 +1,45 @@
-<div class="register-container">
-    <h2>Crear cuenta</h2>
-    <form (ngSubmit)="register()">
-      <label>
-        Usuario:
-        <input type="text" [(ngModel)]="username" name="username" required />
-      </label>
-  
-      <label>
-        Contraseña:
-        <input type="password" [(ngModel)]="password" name="password" required />
-      </label>
-  
-      <button type="submit">Registrarse</button>
-    </form>
-  
-    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-form-container">
+      <h1 class="register-title">Crear cuenta</h1>
+      
+      <form (ngSubmit)="register()">
+        <div class="form-group">
+          <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required />
+          <label for="username" class="form-label">Correo electrónico o número de teléfono</label>
+        </div>
+        
+        <div class="form-group">
+          <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required />
+          <label for="password" class="form-label">Contraseña</label>
+        </div>
+        
+        <button type="submit" class="btn-register">Registrarse</button>
+        
+        <div class="form-help">
+          <div class="terms-privacy">
+            <small>Al registrarte, aceptas nuestros <a href="#">Términos de uso</a> y <a href="#">Política de privacidad</a>.</small>
+          </div>
+        </div>
+      </form>
+      
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      
+      <div class="login-now">
+        <p>¿Ya tienes una cuenta? <a href="#">Inicia sesión</a>.</p>
+      </div>
+      
+      <div class="recaptcha-info">
+        <small>Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.</small>
+      </div>
+    </div>
   </div>
-  
+</body>
+</html>
