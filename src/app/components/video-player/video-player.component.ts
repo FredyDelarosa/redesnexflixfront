@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VideoService } from '../services/video.service';
+import { VideoService } from '../../services/video.service';
 
 @Component({
   standalone: true,

@@ -1,1 +1,39 @@
-<app-video-player></app-video-player>
+<div class="netflix-app">
+    <!-- Header con perfil -->
+    <div class="netflix-header">
+      <div class="netflix-logo">NETFLIX</div>
+      
+      <nav class="netflix-nav">
+        <ul>
+            <li>
+                <a routerLink="/" >Inicio</a>
+              </li>
+          <li><a href="#">Series</a></li>
+          <li><a href="#">Películas</a></li>
+          <li><a href="#">Novedades</a></li>
+          <li><a href="#">Mi lista</a></li>
+        </ul>
+      </nav>
+      
+      <div class="netflix-user">
+        <a href="#" class="netflix-search">🔍</a>
+        <div class="netflix-profile-dropdown">
+          <div class="profile-trigger">
+            <img src="/api/placeholder/32/32" alt="Perfil" class="profile-avatar">
+            <span class="profile-caret">▼</span>
+          </div>
+          <!-- Menú desplegable del perfil aquí -->
+        </div>
+      </div>
+    </div>
+  
+    <!-- Contenido principal (cambia con el enrutador) -->
+    <main class="netflix-main">
+      <router-outlet></router-outlet>
+    </main>
+  
+    <!-- Footer -->
+    <footer class="netflix-footer">
+      <p>© 2025 Netflix, Inc.</p>
+    </footer>
+  </div>

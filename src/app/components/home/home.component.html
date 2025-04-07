@@ -1,0 +1,89 @@
+<div class="movies-page">
+    <!-- Hero banner con película destacada -->
+    <div class="featured-movie">
+      <div class="featured-content">
+        <h1 class="featured-title">Título de Película Destacada</h1>
+        <div class="featured-info">
+          <span class="match">98% de coincidencia</span>
+          <span>2023</span>
+          <span class="rating">16+</span>
+          <span>2h 15min</span>
+          <span class="quality">HD</span>
+        </div>
+        <p class="featured-description">Una descripción cautivadora de la película destacada que aparece en el banner principal para atraer al usuario a verla.</p>
+        <div class="featured-buttons">
+          <button class="netflix-btn play-btn" (click)="playMovie(featuredMovie)">
+            <span>▶</span> Reproducir
+          </button>
+          <button class="netflix-btn more-btn">
+            <span>ℹ</span> Más información
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="movies-section">
+      <h2 class="section-title">Populares en Netflix</h2>
+      <div class="movies-row">
+        <div class="movie-item" *ngFor="let movie of popularMovies" (click)="playMovie(movie)">
+          <div class="movie-poster">
+            <img src="assets/images/Nowhere.jpg" [alt]="movie.title">
+            <div class="movie-info-hover">
+              <h3>{{movie.title}}</h3>
+              <div class="movie-meta">
+                <span class="match">{{movie.match}}% coincidencia</span>
+                <span class="year">{{movie.year}}</span>
+                <span class="duration">{{movie.duration}}</span>
+              </div>
+              <div class="movie-genres">
+                <span *ngFor="let genre of movie.genres">{{genre}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="movies-section">
+      <h2 class="section-title">Tendencias ahora</h2>
+      <div class="movies-row">
+        <div class="movie-item" *ngFor="let movie of trendingMovies" (click)="playMovie(movie)">
+          <div class="movie-poster">
+            <img [src]="movie.poster" [alt]="movie.title">
+            <div class="movie-info-hover">
+              <h3>{{movie.title}}</h3>
+              <div class="movie-meta">
+                <span class="match">{{movie.match}}% coincidencia</span>
+                <span class="year">{{movie.year}}</span>
+                <span class="duration">{{movie.duration}}</span>
+              </div>
+              <div class="movie-genres">
+                <span *ngFor="let genre of movie.genres">{{genre}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="movies-section">
+      <h2 class="section-title">Volver a ver</h2>
+      <div class="movies-row">
+        <div class="movie-item" *ngFor="let movie of watchAgainMovies" (click)="playMovie(movie)">
+          <div class="movie-poster">
+            <img [src]="movie.poster" [alt]="movie.title">
+            <div class="movie-info-hover">
+              <h3>{{movie.title}}</h3>
+              <div class="movie-meta">
+                <span class="match">{{movie.match}}% coincidencia</span>
+                <span class="year">{{movie.year}}</span>
+                <span class="duration">{{movie.duration}}</span>
+              </div>
+              <div class="movie-genres">
+                <span *ngFor="let genre of movie.genres">{{genre}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

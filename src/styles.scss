@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+/* Netflix theme colors */
+:root {
+    --netflix-red: #e50914;
+    --netflix-black: #141414;
+    --netflix-dark-gray: #181818;
+    --netflix-medium-gray: #2f2f2f;
+    --netflix-light-gray: #808080;
+  }
+  
+  /* Base styles */
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--netflix-black);
+    color: white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Scrollbar style */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--netflix-black);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--netflix-medium-gray);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--netflix-light-gray);
+  }
+  
+  /* Netflix style focus outline */
+  *:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }

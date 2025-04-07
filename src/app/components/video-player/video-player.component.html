@@ -1,0 +1,22 @@
+<div class="video-container">
+  <div class="player-header">
+    <div class="title-info">
+      <h1>La la land: The City of Stars</h1>
+      <p>Temporada 1: Episodio 1</p>
+    </div>
+  </div>
+  
+  <!-- Manteniendo tu código original de reproducción -->
+  <video controls #video width="720" [src]="videoUrl" preload="metadata">
+    Tu navegador no soporta videos.
+  </video>
+  
+  <!-- Mensaje offline original de Angular -->
+  <div *ngIf="!isOnline" class="offline-msg">
+    🔌 Estás sin conexión. Solo se puede reproducir lo que ya se haya cargado.
+  </div>
+  
+  <!-- Controles personalizados estilo Netflix (opcionales) -->
+
+    
+</div>

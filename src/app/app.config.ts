@@ -1,17 +1,15 @@
+// app.config.ts
+import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { VideoPlayerComponent } from './video-player/video-player.component';
-import { isDevMode } from '@angular/core';
 import { provideServiceWorker } from '@angular/service-worker';
+import { routes } from './app.routes';
 
-export const appConfig = {
+export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter([]), provideServiceWorker('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            registrationStrategy: 'registerWhenStable:30000'
-          }),
-  ],
-  standalone: true,
-  imports: [
-    VideoPlayerComponent,
-  ],
+    provideRouter(routes),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
+  ]
 };
